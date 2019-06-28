@@ -20,6 +20,10 @@ type store struct {
 	engine *storage.Engine
 }
 
+func NewStore(engine *storage.Engine) reads.Store {
+	return newStore(engine)
+}
+
 func newStore(engine *storage.Engine) *store {
 	return &store{engine: engine}
 }
